@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .container {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+      }
+      .box {
+        justify-content: center;
+        display: flex;
+        width: 700px;
+        height: 1000px;
+        margin: 50px;
+        z-index: 1;
+        background-color: #d5d5d5;
+        border: 30px solid #d5d5d5;
+      }
+
+      .box2 {
+        align-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        background-color: white;
+        border: 10px solid white;
+        border-radius: 10px;
+        z-index: 2;
+        padding: 50px;
+      }
+      p {
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+      }
+      input {
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin: 10px 0;
+        border: 2px solid gray;
+        border-radius: 5px;
+        margin-top: 40px;
+      }
+
+      input:focus {
+        border-color: blue;
+      }
+
+      span {
+        color: red;
+        display: block;
+        font-size: 0.8rem;
+      }
+
+      button {
+        width: 100%;
+        padding: 15px;
+        background-color: rgb(69, 72, 255);
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 5px;
+        margin-top: 60px;
+        font-size: 20px;
+      }
+
+      button:enabled {
+        background-color: blue;
+      }
+      span {
+        text-align: right; /* 모든 span 텍스트를 오른쪽으로 정렬 */
+        display: block;
+        color: red;
+      }
+
+      /* 성공 메시지의 색상을 녹색으로 설정 */
+      span.success-message {
+        color: green;
+      }
+      span.error-message {
+        text-align: right; /* Right aligns the text */
+        display: block;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <div class="box2">
+          <p>회원 가입</p>
+          <br /><br />
+          <form id="signupForm">
+            <label for="id"></label>
+            <input
+              type="text"
+              id="id"
+              name="id"
+              required
+              placeholder="    영문자, 숫자, 밑줄로 이루어진 8 - 20자로 입력하세요."
+            />
+            <span id="idMessage"></span>
+
+            <label for="password"></label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="    영문 대소문자, 숫자, 특수문자를 모두 포함하여 8자 이상 입력하세요."
+            />
+            <span id="passwordMessage"></span>
+
+            <label for="email"></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="     올바른 이메일 형식으로 입력하세요."
+            />
+            <span id="emailMessage"></span>
+
+            <label for="phone"></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              pattern="010-\\d{4}-\\d{4}"
+              placeholder="     01X-XXXX-XXXX 형태로 입력하세요."
+            />
+            <span id="phoneMessage"></span>
+
+            <button type="submit" id="submitBtn" disabled>가입 요청</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="signup.js"></script>
+  </body>
+</html>
